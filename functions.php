@@ -108,6 +108,11 @@ function gallery_home_render() {
 			}
 			echo '</div></div>';
 			printf( '<a class="card-title" href="%1$s">%2$s</a>', $url, $title );
+			printf(
+				'<time class="card-date" datetime="%1$s">%2$s</time>',
+				esc_attr( get_the_date( 'c' ) ),
+				esc_html( get_the_date( 'F j, Y' ) )
+			);
 		} else {
 			// No images at all: the title fills the square tile instead.
 			printf( '<a class="tile tile-text" href="%1$s">%2$s</a>', $url, $title );
